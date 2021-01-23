@@ -26,3 +26,20 @@ h1 {
   margin: 0;
   padding: 20px;
 }
+
+.btn{
+  padding: 8px 30px;
+  color: white;
+  border: 0;
+  transition: all 0.3s ease;
+}
+
+.btn_prime {
+  background-color: rgb(255, 144, 144);
+}
+
+.btn_prime:hover{
+  background-color: rgba(255, 144, 144, 0.534);
+}
+
+#new_
