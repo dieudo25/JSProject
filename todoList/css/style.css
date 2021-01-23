@@ -19,6 +19,7 @@ body {
   margin: 40px;
   background-color: whitesmoke;
   padding: 0 20px;
+  overflow-y: auto;
 }
 
 h1 {
@@ -27,19 +28,32 @@ h1 {
   padding: 20px;
 }
 
-.btn{
+.btn {
   padding: 8px 30px;
   color: white;
+  font-weight: 700;
   border: 0;
   transition: all 0.3s ease;
 }
 
-.btn_prime {
+.btn-prime {
   background-color: rgb(255, 144, 144);
 }
 
-.btn_prime:hover{
+.btn_prime:hover {
   background-color: rgba(255, 144, 144, 0.534);
 }
 
-#new_
+.hide {
+  display: none;
+  transition: all 2s ease-in-out;
+}
+
+#new_task_form {
+  margin-top: 20px;
+  transition: all 2s ease-in-out;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}

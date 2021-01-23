@@ -16,7 +16,25 @@
         <div id="list">
           <p>Nothing todo</p>
         </div>
-        <button id="new_task" class="btn btn_prime">New</button>
+        <button id="new_task" class="btn btn-prime">New</button>
+
+        <div id="new_task_form" class="hide">
+          <form>
+            <div class="form-group">
+              <label for="task_name">Task name</label>
+              <div><input name="task_name" type="text" /></div>
+            </div>
+            <div class="form-group">
+              <label for="task_deadline">Deadline</label>
+              <div><input name="task_deadline" type="date" /></div>
+            </div>
+            <div class="form-group">
+              <label for="task_desc">Description</label>
+              <div><textarea type="text" name="task_desc"></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-prime">Validate</button>
+          </form>
+        </div>
       </section>
     </article>
   </body>
