@@ -8,7 +8,7 @@ body {
 #todo_list {
   width: 100%;
   height: 100vh;
-  background-color: rgb(255, 144, 144);
+  background-color: rgb(183, 70, 70);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,11 +36,11 @@ h1 {
 }
 
 .btn-prime {
-  background-color: rgb(255, 144, 144);
+  background-color: rgb(183, 70, 70);
 }
 
-.btn_prime:hover {
-  background-color: rgba(255, 144, 144, 0.534);
+.btn-prime:hover {
+  background-color: rgba(183, 70, 70, 0.8);
 }
 
 .hide {
