@@ -121,8 +121,20 @@ function resetField(field) {
   field.valid = true;
 }
 
-/* let task = {
-  "name":,
-  "deadline":,
-  "description":,
-} */
+function addTaskToLocalStorage() {
+  /* // Put the object into storage
+  let task = {
+    "name": ,
+    "deadline": ,
+    "description": ,
+  }; */
+
+  localStorage.setItem(task.name, JSON.stringify(task));
+}
+
+function getTaskFromLocalStorage() {
+  // Retrieve the object from storage
+  let getTask = localStorage.getItem("task");
+
+  console.log("task: ", JSON.parse(task));
+}
