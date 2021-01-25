@@ -57,10 +57,8 @@ taskForm.addEventListener(
     fields.forEach((field) => {
       if (!validateField(field)) {
         valid = false;
-      }
-
-      // Check if the field is a date
-      if (field.type == "date") {
+      } else if (field.type == "date") {
+        // Check if the field is a date
         if (!validateDate(field)) {
           valid = false;
         }
@@ -77,8 +75,10 @@ taskForm.addEventListener(
 
 //Function that check the validity of the date
 function validateDate(field) {
+  // Get the date of the instant
   let now = Date.now();
-  let deadline = field.value;
+  // Get the date entered in the new form task
+  let deadline = new Date(field.value);
 
   // Check if the date entred is in the past
   if (deadline > now) {
