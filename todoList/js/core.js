@@ -67,7 +67,7 @@ taskForm.addEventListener(
 
     // if valid submit
     if (valid) {
-      //e.target.submit();
+      e.target.submit();
     }
   },
   false
