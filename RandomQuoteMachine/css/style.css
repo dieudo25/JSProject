@@ -1,0 +1,56 @@
+body {
+  background-color: #0a286d;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+article {
+  background-color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: fantasy;
+}
+
+#quote_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 350px;
+  width: 270px;
+}
+
+#quote_controller {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  padding: 8px 26px;
+  margin-bottom: 10px;
+  border: 0;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #0a286d;
+}
+
+.btn-primary:hover {
+  background-color: #2349a1;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-secondary {
+  background-color: #2f1389;
+}
+
+.btn-secondary:hover {
+  background-color: #4426a6;
+  transition: 0.3s ease-in-out;
+}
