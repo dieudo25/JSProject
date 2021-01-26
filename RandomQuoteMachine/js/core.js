@@ -1,19 +1,20 @@
 // Select the new quote button
 const newQuoteButton = document.querySelector("#new_quote");
+// Select the twitter button
+const tweeterButton = document.querySelector("#tweet_quote");
 // Select the spinner element
 const spinner = document.querySelector("#spinner");
+// EndPoint of "What Does Donald Trump Think" API that get randoms quote
+const endpoint = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 
 // event click on new quote button
 newQuoteButton.addEventListener(
   "click",
-  (e) => {
+  () => {
     let quote = getQuote();
   },
   false
 );
-
-// EndPoint of "What Does Donald Trump Think" API that get randoms quote
-const endpoint = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 
 //asynchrone fonction (promise) that get a Quote from the API
 async function getQuote() {
@@ -33,7 +34,7 @@ async function getQuote() {
 
     const json = await response.json();
     displayQuote(json.message);
-    return json;
+    setTweetButton(json.message);
   } catch (err) {
     console.log(err);
     alert("Failed to fetch new quote!");
@@ -45,7 +46,19 @@ async function getQuote() {
   }
 }
 
+// Function that display the quote fetched form the API
 function displayQuote(quote) {
   const quoteText = document.querySelector("#quote_text p");
+  // Change the contetnt of the element selected
   quoteText.textContent = quote;
 }
+
+// Function that share the quote to twitter
+function setTweetButton(quote) {
+  tweeterButton.setAttribute(
+    "href",
+    `https://twitter.com/share?text=${quote} - Donald Trump`
+  );
+}
+
+getQuote();

@@ -45,9 +45,17 @@ h1 {
   margin-bottom: 10px;
   border: 0;
   color: white;
+  font-size: 13px;
+  text-align: center;
 }
 
 .btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.btn:hover:disabled {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
