@@ -4,12 +4,14 @@ body {
   height: 100vh;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0 10px;
 }
 
 article {
   background-color: white;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 350px;
+  margin: 30px auto;
+  width: 100%;
 }
 
 h1 {
@@ -22,7 +24,11 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
   height: 350px;
-  width: 270px;
+  padding: 10px 15px;
+}
+
+#quote_text p {
+  text-align: center;
 }
 
 #quote_controller {
@@ -53,4 +59,22 @@ h1 {
 .btn-secondary:hover {
   background-color: #4426a6;
   transition: 0.3s ease-in-out;
+}
+
+@media (min-width: 425px) {
+  article {
+    min-width: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  article {
+    min-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  article {
+    min-width: 750px;
+  }
 }
