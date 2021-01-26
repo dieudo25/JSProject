@@ -6,6 +6,7 @@
     <title>Random Quote Machine</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/spinner.css">
     <script src="js/core.js" defer></script>
 </head>
 <body>
@@ -14,6 +15,14 @@
         <h1>Random Quote Machine</h1>
         <div id="quote_text">
             <p></p>
+        </div>
+        <div id="spinner" class="sk-chase hidden">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
         </div>
         <div id="quote_controller">
             <button type="button" id="new_quote" class="btn btn-primary">Generate a new quote</button>

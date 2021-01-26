@@ -1,5 +1,7 @@
 // Select the new quote button
 const newQuoteButton = document.querySelector("#new_quote");
+// Select the spinner element
+const spinner = document.querySelector("#spinner");
 
 // event click on new quote button
 newQuoteButton.addEventListener(
@@ -15,6 +17,11 @@ const endpoint = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 
 //asynchrone fonction (promise) that get a Quote from the API
 async function getQuote() {
+  //Remove the 'hidden' class from the spinner it is now visible
+  spinner.classList.remove("hidden");
+  // Disable the quote button
+  newQuoteButton.disabled = true;
+
   try {
     // fetch the random quote with the endpoint
     const response = await fetch(endpoint);
@@ -30,6 +37,11 @@ async function getQuote() {
   } catch (err) {
     console.log(err);
     alert("Failed to fetch new quote!");
+  } finally {
+    // Add the 'hidden' class to the spinner, it is now not visible
+    spinner.classList.add("hidden");
+    // Able the use of the quote button
+    newQuoteButton.disabled = false;
   }
 }
 

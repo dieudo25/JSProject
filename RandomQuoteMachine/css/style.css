@@ -18,6 +18,10 @@ h1 {
   font-family: fantasy;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 #quote_section {
   display: flex;
   flex-direction: column;
@@ -41,6 +45,12 @@ h1 {
   margin-bottom: 10px;
   border: 0;
   color: white;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
 }
 
 .btn-primary {
