@@ -12,39 +12,34 @@ keys.addEventListener(
   (event) => {
     // Access the clicked element
     const { target } = event; // equivalent to const target = event.target;
+    const { value } = target;
 
     // Check if the cliked element is a button
     // If no exit from the function
-    // matches fonction check with the css selector
-    if (!target.matches("button")) {
-      return;
+    switch (value) {
+      case "+":
+      case "-":
+      case "*":
+      case "/":
+      case "=":
+        handleOperator(value);
+        break;
+      case ".":
+        inputDecimal(value);
+        break;
+      case "all-clear":
+        resetCalculator();
+        break;
+      default:
+        // check if the key is an integer
+        if (Number.isInteger(parseFloat(value))) {
+          inputDigit(value);
+        }
     }
-
-    if (target.classList.contains("operator")) {
-      handleOperator(target.value);
-      updateDisplay();
-
-      return;
-    }
-
-    if (target.classList.contains("decimal")) {
-      inputDecimal(target.value);
-      updateDisplay();
-      return;
-    }
-
-    if (target.classList.contains("all-clear")) {
-      console.log("all-clear : ", target.value);
-      return;
-    }
-
-    inputDigit(target.value);
     updateDisplay();
   },
   false
 );
-
-updateDisplay();
 
 function updateDisplay() {
   // Select the element with the class 'calculator-screen'
@@ -69,6 +64,11 @@ function inputDigit(digit) {
 }
 
 function inputDecimal(dot) {
+  if (calculator.waitingForSecondOperand === true) {
+    calculator.displayValue = "0.";
+    calculator.waitingForSecondOperand = false;
+    return;
+  }
   // If the `displayValue` property does not contain a decimal point
   if (!calculator.displayValue.includes(dot)) {
     // Append decimal point
@@ -97,7 +97,8 @@ function handleOperator(nextOperator) {
   } else if (operator) {
     const result = calculate(firstOperand, inputValue, operator);
 
-    calculator.displayValue = String(result);
+    calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
+
     calculator.firstOperand = result;
   }
 
@@ -119,4 +120,12 @@ function calculate(firstOperand, secondOperand, operator) {
   }
 
   return secondOperand;
+}
+
+function resetCalculator() {
+  calculator.displayValue = "0";
+  calculator.firstOperand = null;
+  calculator.waitingForSecondOperand = false;
+  calculator.operator = null;
+  console.log(calculator);
 }
