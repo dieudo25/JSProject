@@ -15,6 +15,7 @@ keys.addEventListener(
 
     // Check if the cliked element is a button
     // If no exit from the function
+    // matches fonction check with the css selector
     if (!target.matches("button")) {
       return;
     }

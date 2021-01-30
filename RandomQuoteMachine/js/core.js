@@ -25,14 +25,14 @@ async function getQuote() {
 
   try {
     // fetch the random quote with the endpoint
-    const response = await fetch(endpoint);
+    let response = await fetch(endpoint);
 
     // Throw an error ff the promise (fetch) is rejected (!response.ok)
     if (!response.ok) {
-      throw Error(response.statusText);
+      throw new Error(response.statusText);
     }
 
-    const json = await response.json();
+    let json = await response.json();
     displayQuote(json.message);
     setTweetButton(json.message);
   } catch (err) {
